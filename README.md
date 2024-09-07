@@ -4,7 +4,7 @@ Este proyecto esta hecho con [Create React App](https://github.com/facebook/crea
 
 ## Importante
 
-Usar version de node 16.20.2
+Usar version de node 16.20.2 (Esto por problemas con dependencias)
 se puede encontrar en el siguiente [enlace](https://nodejs.org/en/blog/release/v16.20.2)
 
 ### `npm start`
