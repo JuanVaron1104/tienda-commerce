@@ -22,7 +22,7 @@ function LoginView() {
     const history = useHistory()
 
     useEffect(() => {
-        const usuRole = localStorage.getItem("proyecto_tps103_userRole") || sessionStorage.getItem("proyecto_tps103_userRole")
+        const usuRole = localStorage.getItem("commerce_userRole") || sessionStorage.getItem("commerce_userRole")
         if (usuRole) {
             Swal.fire({
                 title: "Ya has iniciado sesión",
@@ -41,14 +41,14 @@ function LoginView() {
         try {
             const { data } = await axios.post('http://localhost:5000/Login', loginData)
             if (loginData.saveSession) {
-                localStorage.setItem('proyecto_tps103_userID', data.id_usuarios)
-                localStorage.setItem('proyecto_tps103_userRole', data.usuId_role)
-                localStorage.setItem('proyecto_tps103_username', data.username)
+                localStorage.setItem('commerce_userID', data.id_usuarios)
+                localStorage.setItem('commerce_userRole', data.usuId_role)
+                localStorage.setItem('commerce_username', data.username)
 
             } else {
-                sessionStorage.setItem('proyecto_tps103_userID', data.id_usuarios)
-                sessionStorage.setItem('proyecto_tps103_userRole', data.usuId_role)
-                sessionStorage.setItem('proyecto_tps103_username', data.username)
+                sessionStorage.setItem('commerce_userID', data.id_usuarios)
+                sessionStorage.setItem('commerce_userRole', data.usuId_role)
+                sessionStorage.setItem('commerce_username', data.username)
             }
             const { usuId_role } = data
             history.push(definirEnturamiento(usuId_role))

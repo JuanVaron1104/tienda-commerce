@@ -34,7 +34,7 @@ function CarritoCompras() {
         try {
             const { data: productos } = await axios.get("http://localhost:5000/CarritoCompras", {
                 params: {
-                    id_usuarios: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                    id_usuarios: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                 }
             })
             setProductos(productos)
@@ -54,7 +54,7 @@ function CarritoCompras() {
                 await axios.put("http://localhost:5000/CarritoCompras", {
                     detcarId_producto: product.proCodigo,
                     detcarCantidad: product.detcarCantidad + 1,
-                    detcarId_carrito: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                    detcarId_carrito: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                 })
             } catch (error) {
                 console.error(error)
@@ -75,7 +75,7 @@ function CarritoCompras() {
                 await axios.delete("http://localhost:5000/CarritoCompras", {
                     params: {
                         detcarId_producto: product.proCodigo,
-                        detcarId_carrito: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                        detcarId_carrito: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                     }
                 })
             } catch (error) {
@@ -88,7 +88,7 @@ function CarritoCompras() {
                 await axios.put("http://localhost:5000/CarritoCompras", {
                     detcarId_producto: product.proCodigo,
                     detcarCantidad: product.detcarCantidad - 1,
-                    detcarId_carrito: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                    detcarId_carrito: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                 })
             } catch (error) {
                 console.error(error)
@@ -106,7 +106,7 @@ function CarritoCompras() {
             await axios.delete("http://localhost:5000/CarritoCompras", {
                 params: {
                     detcarId_producto: proCodigo,
-                    detcarId_carrito: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                    detcarId_carrito: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                 }
             })
 
@@ -119,7 +119,7 @@ function CarritoCompras() {
     const handleSubmitComprar = async (venSubTotal, venValorIva, venTotalVenta) => {
         try {
             const { data: respuesta } = await axios.post("http://localhost:5000/Compras", {
-                userID: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID')),
+                userID: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID')),
                 venSubTotal, venValorIva, venTotalVenta
             })
 

@@ -7,8 +7,8 @@ import Administrador from "../../views/HomeAdministrador";
 
 function AuthAdmin() {
   const tipoUsuario =
-    localStorage.getItem("proyecto_tps103_userRole") ||
-    sessionStorage.getItem("proyecto_tps103_userRole");
+    localStorage.getItem("commerce_userRole") ||
+    sessionStorage.getItem("commerce_userRole");
 
   if (!tipoUsuario) {
     swal.fire({

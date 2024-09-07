@@ -131,7 +131,7 @@ function Cajon({ activeMenu, handleChangeActiveMenu }) {
                                 variant="button"
                                 color="textPrimary"
                             >
-                                {localStorage.getItem('proyecto_tps103_username') || sessionStorage.getItem('proyecto_tps103_username')}
+                                {localStorage.getItem('commerce_username') || sessionStorage.getItem('commerce_username')}
                             </Typography>
 
                             <Typography

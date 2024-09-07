@@ -24,7 +24,7 @@ function Producto({ item }) {
     }
 
     const handleSubmitComprar = async () => {
-        if ( localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID') ) {
+        if ( localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID') ) {
             handleSubmitAddToCarrito();
             history.push("/carrito")
         } else {
@@ -45,7 +45,7 @@ function Producto({ item }) {
                 const { data: respuesta } = await axios.post("http://localhost:5000/CarritoCompras", {
                     detcarId_producto: item.Codigo,
                     detcarCantidad: cantidad,
-                    detcarId_carrito: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                    detcarId_carrito: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                 })
 
                 if (respuesta.affectedRows > 0) {

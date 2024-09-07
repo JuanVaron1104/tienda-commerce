@@ -35,7 +35,7 @@ function Compra({ id_venta, title, fecha, proCodigo, proFoto, proCantidad }) {
                 const { data: respuesta } = await axios.post("http://localhost:5000/CarritoCompras", {
                     detcarId_producto: proCodigo,
                     detcarCantidad: cantidad,
-                    detcarId_carrito: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                    detcarId_carrito: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                 })
 
                 if (respuesta.affectedRows > 0) {

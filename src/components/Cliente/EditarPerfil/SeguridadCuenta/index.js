@@ -46,7 +46,7 @@ function SeguridadCuenta() {
             } else {
                 try {
                     const { usuPasswordConfirm, ...userDatos } = userData
-                    const autenticado = await axios.put('http://localhost:5000/Cliente', { userDatos: userDatos, idUsuario: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID')) })
+                    const autenticado = await axios.put('http://localhost:5000/Cliente', { userDatos: userDatos, idUsuario: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID')) })
                     MensajeInformativo('CONTRASEÑA ACTUALIZADA', autenticado.data.message, 'success')
                     setUserData({})
                 } catch (error) {

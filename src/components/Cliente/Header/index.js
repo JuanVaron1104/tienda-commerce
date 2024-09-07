@@ -70,7 +70,7 @@ function Header() {
     }
 
     useEffect(() => {
-        const user = localStorage.getItem(`proyecto_tps103_userID`) || sessionStorage.getItem(`proyecto_tps103_userID`)
+        const user = localStorage.getItem(`commerce_userID`) || sessionStorage.getItem(`commerce_userID`)
         if (user) {
             setAuth(true)
         }
@@ -143,7 +143,7 @@ function Header() {
 
                             <div>
                                 <Typography variant="button" className={classes.title}>
-                                    {`${localStorage.getItem('proyecto_tps103_username') || sessionStorage.getItem('proyecto_tps103_username')}`}
+                                    {`${localStorage.getItem('commerce_username') || sessionStorage.getItem('commerce_username')}`}
                                 </Typography>
 
                                 <IconButton

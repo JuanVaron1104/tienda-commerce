@@ -26,7 +26,7 @@ function HistoricoCompras() {
         try {
             const { data: compras } = await axios.get("http://localhost:5000/Compras", {
                 params: {
-                    id_usuarios: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                    id_usuarios: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                 }
             })
             setCompras(compras)

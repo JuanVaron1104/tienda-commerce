@@ -60,13 +60,13 @@ function DetalleProducto() {
     }
 
     const handleSubmitAddToCarrito = async () => {
-        if (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID')) {
+        if (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID')) {
             if (producto.proCantidad >= cantidad && cantidad > 0) {
                 try {
                     const { data: respuesta } = await axios.post("http://localhost:5000/CarritoCompras", {
                         detcarId_producto: idProducto,
                         detcarCantidad: cantidad,
-                        detcarId_carrito: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                        detcarId_carrito: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                     })
                     handleCloseModal()
                     history.push("/productos")
@@ -99,7 +99,7 @@ function DetalleProducto() {
     }
 
     const handleSubmitComprar = async () => {
-        if (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID')) {
+        if (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID')) {
             handleSubmitAddToCarrito().then(() => history.push("/carrito"))
         } else {
             handleCloseModal()

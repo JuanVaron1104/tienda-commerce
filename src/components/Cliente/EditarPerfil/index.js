@@ -68,7 +68,7 @@ function MiPerfil() {
         try {
             const { data: cliente } = await axios.get("http://localhost:5000/Cliente", {
                 params: {
-                    id_usuarios: (localStorage.getItem('proyecto_tps103_userID') || sessionStorage.getItem('proyecto_tps103_userID'))
+                    id_usuarios: (localStorage.getItem('commerce_userID') || sessionStorage.getItem('commerce_userID'))
                 }
             })
             setUserData(cliente[0])
@@ -90,7 +90,7 @@ function MiPerfil() {
                         <Typography
                             variant="button"
                         >
-                            {`${localStorage.getItem('proyecto_tps103_username') || sessionStorage.getItem('proyecto_tps103_username')}`}
+                            {`${localStorage.getItem('commerce_username') || sessionStorage.getItem('commerce_username')}`}
                         </Typography>
 
                         <Typography
